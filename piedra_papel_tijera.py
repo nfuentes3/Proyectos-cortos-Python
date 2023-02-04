@@ -21,9 +21,17 @@ def game_ppt():
         time.sleep(2)
         print('\nEliga entre una de las opciones(Indique entre 1, 2 y 3): ')
         print('\n 1) Piedra\n 2) Papel\n 3) Tijera')
-        human_choice = int(input('Opcion: '))
         
-        while human_choice < 4 and human_choice > 0:
+        while True: #Condicion para aceptar solo opciones correctas
+            human_choice = input('Opcion: ')
+            try:
+                human_choice = int(human_choice)
+                break
+            except ValueError:
+                print('Error! Debe elegir un numero.')
+                time.sleep(1)
+        
+        while human_choice < 4 and human_choice > 0: #Creamos bucle para condiciones de juego + suma de puntos.
             if (human_choice == 1 and cpu_choice == 3) or (human_choice == 2 and cpu_choice == 1) or (human_choice == 3 and cpu_choice == 2):
                 print(f'===========> Has elejido {values[human_choice]}.')
                 print(f'===========> Python elije {values[cpu_choice]}.')
@@ -54,7 +62,7 @@ def game_ppt():
         else: 
             print('Opcion incorrecta, elija entre las opciones indicadas.')
     else: 
-        if human_score == 3:
+        if human_score == 3: #Condicion para el resutado final.
             print('\nHas ganado!!!')
             time.sleep(1)
             print(f'Resultado final:\nTú = {human_score} / Python = {cpu_score}')
