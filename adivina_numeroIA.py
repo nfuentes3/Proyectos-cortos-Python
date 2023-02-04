@@ -1,16 +1,21 @@
 import random
 import time
+
+"""Creamos un script donde jugamos a adivinar un numero elegido por Python, donde tenemos hasta 5 intentos
+para poder adivinar, de lo contrario perderas!"""
+
 print('**********************************************************')
 print('Bienvenido al juego donde tienes que adivinar el numero!')
 print('Python piensa en un numero entre el 1 y el 50, puedes adivinar que numero es?')
 print('Recuerda que solo tienes 5 intentos!\n')
 time.sleep(1)
 
+#Iniciamos las varialbes y la eleccion del numero de Python.
 attemps : int = 0
 number : int = random.randint(1,50)
 total_attemps : int = 5
 
-while attemps < 5:
+while attemps < 5: #Creamos la excepcion de que el usuario tenga que elegir solamente un numero.
         while True:
             my_number = input('Indica el numero a adivinar ====>  ')
             try:
@@ -21,7 +26,7 @@ while attemps < 5:
                 time.sleep(1)
 
             
-        if my_number < number:
+        if my_number < number: #Condiciones del juego.
             attemps += 1
             attemps_left = total_attemps - attemps
             print('Incorrecto, debe ser un numero mas alto.')

@@ -1,6 +1,9 @@
 import random
 import time
 
+"""Creamos un script que simula el juego Piedra, Papel o Tijera contra Python.
+Debe elegir entre las opciones indicadas para jugar, el primero en llegar a 3 puntos gana!"""
+
 #Creamos diccionario con los valores para ser mostrados en consola
 values = {
     1: 'Piedra',
